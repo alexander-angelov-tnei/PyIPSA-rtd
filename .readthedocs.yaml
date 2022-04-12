@@ -15,7 +15,7 @@ python:
   # Install our python package before building the docs
   install:
     - method: pip
-      path: C:\Users\angelova\AppData\Local\Programs\Python\Python38\
+      path: .
 
 # Build documentation in the docs/ directory with Sphinx
 sphinx:
