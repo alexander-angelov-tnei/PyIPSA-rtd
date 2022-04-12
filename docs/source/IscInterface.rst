@@ -1,6 +1,6 @@
-PyIPSA-rtd.ISCInterface
+ISCInterface
 ==================================
 
 
-.. automodule:: PyIPSA-rtd.ISCInterface
+.. automodule:: ISCInterface
    :members:
