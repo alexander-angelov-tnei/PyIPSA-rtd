@@ -1,6 +1,6 @@
-ISCInterface
+IscInterface
 ==================================
 
 
-.. automodule:: ISCInterface
+.. automodule:: IscInterface
    :members:
