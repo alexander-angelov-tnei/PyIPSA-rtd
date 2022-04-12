@@ -12,6 +12,9 @@ class IscInterface:
         """
         Opens an Ipsa i2f file strName and returns an IscNetwork instance for that file.
 
-        :param strName (str): The Ipsa i2f file that is going to be opened.
-        :return (IscNetwork): The IscNetwork instance for the strName file
+        :param strName: The Ipsa i2f file that is going to be opened.
+        :type strName: str
+        :return: The IscNetwork instance for the strName file
+        :rtype: IscNetwork
         """
+        pass
