@@ -11,6 +11,13 @@ build:
   tools:
     python: "3.8"
 
+python:
+  # Install our python package before building the docs
+  install:
+    - method: pip
+      path: C:\Users\angelova\AppData\Local\Programs\Python\Python38\
+
 # Build documentation in the docs/ directory with Sphinx
 sphinx:
    configuration: docs/conf.py
+   fail_on_warning: true
