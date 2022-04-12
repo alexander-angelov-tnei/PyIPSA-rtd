@@ -1,5 +1,5 @@
 """
-Lumache - Python library for cooks and food lovers.
+PyIPSA - The fastest and easiest interfacing tool in power systems analysis!
 """
 
 
