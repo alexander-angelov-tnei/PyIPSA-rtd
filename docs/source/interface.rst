@@ -1,6 +1,0 @@
-interface
-==================================
-
-
-.. automodule:: interface
-   :members:
