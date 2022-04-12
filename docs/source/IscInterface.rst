@@ -1,6 +1,6 @@
-ISCInterface
+PyIPSA.ISCInterface
 ==================================
 
 
-.. automodule:: ISCInterface
+.. automodule:: PyIPSA.ISCInterface
    :members:
