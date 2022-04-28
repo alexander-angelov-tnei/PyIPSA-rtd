@@ -1,7 +1,5 @@
 IscInterface
-===
+============
 
-.. autosummary::
-   :toctree: generated
-
-   IscInterface
+.. automodule:: src.IscInterface
+   :members:

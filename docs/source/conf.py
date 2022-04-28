@@ -1,3 +1,10 @@
+import os
+import sys
+#import src.IscInterface
+#sys.path.insert(0, os.path.abspath('..'))
+sys.path.insert(0, os.path.abspath('../../'))
+print(sys.path)
+import src
 # Configuration file for the Sphinx documentation builder.
 
 # -- Project information
@@ -6,8 +13,8 @@ project = 'PyIPSA'
 copyright = 'IPSA'
 author = 'IPSA'
 
-release = '0.1'
-version = '0.1.0'
+release = '1.0'
+version = '2.10.0'
 
 # -- General configuration
 
@@ -27,9 +34,16 @@ intersphinx_disabled_domains = ['std']
 
 templates_path = ['_templates']
 
+source_suffix = '.rst'
+
+master_doc = 'index'
+
 # -- Options for HTML output
 
 html_theme = 'sphinx_rtd_theme'
 
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
+
+autosummary_generate = True
+#autodoc_mock_imports = ["IscInterface"]
