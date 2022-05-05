@@ -8,7 +8,9 @@ How to run it
 
     1. Select the Run/Run... option from the menu
     2. Select Edit configurations
-    3. Change the PATH for the existing unnamed script, which can be found in PyIPSA-rtd/.idea/runConfigurations
+        a. Change the script PATH to: C:\Users\{USERNAME}\PycharmProjects\PyIPSA-rtd\docs\make.bat
+        b. Change the script options to: html
+        c. Change the Working directory to: C:/Users/{USERNAME}/PycharmProjects/PyIPSA-rtd
 
 To look for the html version go to docs/build/html and open index.html
 
