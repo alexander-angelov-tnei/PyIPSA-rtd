@@ -8,9 +8,15 @@ How to run it
 
     1. Select the Run/Run... option from the menu
     2. Select Edit configurations
-        a. Change the script PATH to: C:\Users\{USERNAME}\PycharmProjects\PyIPSA-rtd\docs\make.bat
-        b. Change the script options to: html
-        c. Change the Working directory to: C:/Users/{USERNAME}/PycharmProjects/PyIPSA-rtd
+        a. Click Add new configuration and choose shell script
+        b. Change the script PATH to: C:\Users\{USERNAME}\{PATH_TO_PyIPSA-rtd}\PyIPSA-rtd\docs\make.bat
+        c. Change the script options to: html
+        d. Change the Working directory to: C:/Users/{USERNAME}/{PATH_TO_PyIPSA-rtd}/PyIPSA-rtd
+        e. Press apply, then close the window by pressing OK.
+        f. Press run.
+        g. If errors are appearing, write the commands given below in the Terminal:
+            - pip install sphinx
+            - pip install sphinx-rtd-theme
 
 To look for the html version go to docs/build/html and open index.html
 
