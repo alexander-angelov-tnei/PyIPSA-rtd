@@ -1,7 +1,7 @@
-class IscProtectionDevice:
+class IscStaticVC:
     """
-    The IscProtectionDevice class provides access to a single protection device, such as a relay,
-    allowing data to be set and cleared.
+    The IscStaticVC class provides access to an Ipsa Static VAR Compensator (SVC),
+    to set and get data values and to retrieve load flow results.
     """
     def SetName(self, strName: str) -> bool:
         """
@@ -107,5 +107,50 @@ class IscProtectionDevice:
         :type bValue: bool
         :return: True if successful.
         :rtype: bool
+        """
+        pass
+
+    def GetReactivePowerMVAr(self) -> float:
+        """
+        Returns the SVC produced power in MVAr.
+
+        :return: The SVC produced power in MVAr.
+        :rtype: float
+        """
+        pass
+
+    def GetReactivePowerkVAr(self) -> float:
+        """
+        Returns the SVC produced power in kVAr.
+
+        :return: The SVC produced power in kVAr.
+        :rtype: float
+        """
+        pass
+
+    def GetTotalPowerMVA(self) -> float:
+        """
+        Returns the SVC produced total power in MVA.
+
+        :return: The SVC produced total power in MVA.
+        :rtype: float
+        """
+        pass
+
+    def GetTotalPowerkVA(self) -> float:
+        """
+        Returns the SVC produced total power in kVA.
+
+        :return: The SVC produced total power in kVA.
+        :rtype: float
+        """
+        pass
+
+    def GetCurrentkA(self) -> float:
+        """
+        Returns the SVC injected current in kA.
+
+        :return: The SVC injected current in kA.
+        :rtype: float
         """
         pass

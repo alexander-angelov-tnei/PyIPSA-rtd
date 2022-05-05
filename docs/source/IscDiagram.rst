@@ -1,5 +1,5 @@
 IscDiagram
 ============
 
-.. automodule:: src.IscDiagram
+.. autoclass:: ipsa.IscDiagram
    :members:

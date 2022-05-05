@@ -3,8 +3,7 @@ from typing import Dict, Union
 
 class IscNetComponent:
     """
-    The IscNetComponent class is the base class for all Ipsa components.
-    All functions that are exposed (described below) are accessible via the derived component classes.
+    The base class for all IPSA components.
     """
     def GetUID(self) -> int:
         """

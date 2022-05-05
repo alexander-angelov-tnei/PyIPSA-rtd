@@ -1,12 +1,9 @@
-from typing import Dict, List, Tuple, Union, overload
+from typing import Dict, List, Tuple, overload
 
 
 class IscNetwork:
     """
-    This object provides the main access to an Ipsa network.
-    It is generally created as the result to a call to IscInterface().ReadFile(strName).
-    This class provides functions to retrieve, create and delete network components,
-    perform analysis and get network results.
+    Class providing the main access to an Ipsa network.
     """
     def SetBusbarSlack(self, strBusbar: str) -> None:
         """
@@ -4050,14 +4047,9 @@ class IscNetwork:
         """
         Performs a load flow calculation.
 
-        :param bNoEngineLoad: If False (default), loads the engine from the Ipsa model before doing a load flow
-        calculation. If True, skips the load from the Ipsa model and uses whatever network is currently loaded in
-        the engine.
+        :param bNoEngineLoad: If False (default), loads the engine from the Ipsa model before doing a load flow calculation. If True, skips the load from the Ipsa model and uses whatever network is currently loaded in the engine.
         :type bNoEngineLoad: bool
-        :param bDontUpdateData: If False (default), allows the load flow results being written back to the network
-        model data (e.g. Busbar voltages and angles). If True, skips this stage, so the network model remains
-        the same as it was loaded. **Note that calling the function with no arguments is allowed and works as if it
-        has been called with bNoEngineLoad and bDontUpdateData set to False.**
+        :param bDontUpdateData: If False (default), allows the load flow results being written back to the network model data (e.g. Busbar voltages and angles). If True, skips this stage, so the network model remains the same as it was loaded. **Note that calling the function with no arguments is allowed and works as if it has been called with bNoEngineLoad and bDontUpdateData set to False.**
         :type bDontUpdateData: bool
         :return: True if the load flow converges, False on a non-convergence.
         :rtype: bool

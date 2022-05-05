@@ -3,8 +3,7 @@ from typing import List, overload
 
 class IscInterface:
     """
-    The IscInterface class is the main interface class used to access all other Ipsa objects and functions.
-    It must be created before any other references to Ipsa objects.
+    The main interface class used to access all other Ipsa objects and functions.
     """
     def ReadFile(self, strName: str):
         """
@@ -19,7 +18,7 @@ class IscInterface:
 
     def ReadIpsa1File(self, strName: str):
         """
-        Imports an Ipsa 1 (*.iif) file strName and returns an IscNetwork instance for that file.
+        Imports an Ipsa 1 (\*.iif) file strName and returns an IscNetwork instance for that file.
 
         :param strName: The Ipsa i2f file that is going to be imported.
         :type strName: str
@@ -252,14 +251,13 @@ class IscInterface:
 
     def AskQuestion(self, strDialogTitle: str, strQuestion: str) -> bool:
         """
-        Display a message box with title specified by strDialogTitle and a message specified by strMessage.
-        An OK button is provided for the user to dismiss the dialog.
+        Display a message box with a title and a question as shown below.
 
         :param strDialogTitle: The title of the message box.
         :type strDialogTitle: str
         :param strQuestion: The question displayed on the message box.
         :type strQuestion: str
-        :return: Boolean denoting whether a message box is created.
+        :return: True when the user clicks Yes, otherwise False.
         :rtype: bool
         """
         pass

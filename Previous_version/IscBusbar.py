@@ -120,9 +120,7 @@ class IscBusbar:
         NomCurrentkA – it is an IscCircuitBreaker field index.**
         This function is used to get fault (breaker) ratings for a busbar.
 
-
-        :param nCircuitBreakerFieldIndex: MakePeakkA, BreakRMSkA, BreakDCPC, BreakTimemS or
-        NomCurrentkA – it is an IscCircuitBreaker field index.
+        :param nCircuitBreakerFieldIndex: MakePeakkA, BreakRMSkA, BreakDCPC, BreakTimemS or NomCurrentkA – it is an IscCircuitBreaker field index.
         :type nCircuitBreakerFieldIndex: int
         :return: The float value for the selected field.
         :rtype: float
@@ -136,8 +134,7 @@ class IscBusbar:
         NomCurrentkA – it is an IscCircuitBreaker field index.**
         This function is used to set fault (breaker) ratings for a busbar.
 
-        :param nCircuitBreakerFieldIndex: MakePeakkA, BreakRMSkA, BreakDCPC, BreakTimemS or
-        NomCurrentkA – it is an IscCircuitBreaker field index.
+        :param nCircuitBreakerFieldIndex: MakePeakkA, BreakRMSkA, BreakDCPC, BreakTimemS or NomCurrentkA – it is an IscCircuitBreaker field index.
         :type nCircuitBreakerFieldIndex: int
         :return: True if successful.
         :rtype: bool

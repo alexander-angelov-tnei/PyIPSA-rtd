@@ -1,6 +1,9 @@
+from typing import Dict
+
+
 class IscGridInfeed:
     """
-    The IscFilter class provides access to an Ipsa harmonic filter,
+    The IscGridInfeed class provides access to an Ipsa grid infeed,
     to set and get data values and to retrieve load flow and fault level results.
     """
     def SetName(self, strName: str) -> bool:
@@ -110,78 +113,155 @@ class IscGridInfeed:
         """
         pass
 
+    def SetHarmonicR(self, dictHarmonicData: Dict[float, float]) -> None:
+        """
+        Sets the values for the harmonic resistance of the grid infeed.
+
+        :param dictHarmonicData: Dictionary in the following format: **{double dHarmonicOrder:double dHarmonicImpedance, …}** where dHarmonicImpedance is a value specifying the harmonic resistance at the frequency given by the harmonic order dHarmonicOrder. Up to 120 different orders may be specified in each grid infeed.
+        :type dictHarmonicData: dict(float,float)
+        """
+        pass
+
+    def SetHarmonicX(self, dictHarmonicData: Dict[float, float]) -> None:
+        """
+        Sets the values for the harmonic reactance of the grid infeed.
+
+        :param dictHarmonicData: Dictionary in the following format: **{double dHarmonicOrder:double dHarmonicImpedance, …}** where dHarmonicImpedance is a value specifying the harmonic resistance at the frequency given by the harmonic order dHarmonicOrder. Up to 120 different orders may be specified in each grid infeed.
+        :type dictHarmonicData: dict(float,float)
+        """
+        pass
+
+    def GetVoltageMagnitudePU(self) -> float:
+        """
+        Returns the generator voltage magnitude in per unit.
+
+        :return: The generator voltage magnitude in per unit.
+        :rtype: float
+        """
+        pass
+
+    def GetVoltageAngleRad(self) -> float:
+        """
+        Returns the voltage angle in radians.
+
+        :return: The voltage angle.
+        :rtype: float
+        """
+        pass
+
+    def GetVoltageAngleDeg(self) -> float:
+        """
+        Returns the voltage angle in degrees.
+
+        :return: The voltage angle.
+        :rtype: float
+        """
+        pass
+
     def GetPowerMagnitudeMVA(self) -> float:
         """
-        Returns the filter absorbed power in MVA.
+        Returns the generator output in MVA.
 
-        :return: The filter absorbed power in MVA.
+        :return: The generator output in MVA.
         :rtype: float
         """
         pass
 
     def GetPowerMagnitudekVA(self) -> float:
         """
-        Returns the filter absorbed power in kVA.
+        Returns the generator output in kVA.
 
-        :return: The filter absorbed power in kVA.
+        :return: The generator output in kVA.
         :rtype: float
         """
         pass
 
     def GetRealPowerMW(self) -> float:
         """
-        Returns the filter absorbed power in MW.
+        Returns the generator output in MW.
 
-        :return: The filter absorbed power in MW.
+        :return: The generator output in MW.
         :rtype: float
         """
         pass
 
     def GetReactivePowerMVAr(self) -> float:
         """
-        Returns the filter absorbed power in MVAr.
+        Returns the generator output in MVAr.
 
-        :return: The filter absorbed power in MVAr.
+        :return: The generator output in MVAr.
         :rtype: float
         """
         pass
 
     def GetRealPowerkW(self) -> float:
         """
-        Returns the filter absorbed power in kW.
+        Returns the generator output in kW.
 
-        :return: The filter absorbed power in kW.
+        :return: The generator output in kW.
         :rtype: float
         """
         pass
 
     def GetReactivePowerkVAr(self) -> float:
         """
-        Returns the filter absorbed power in kVAr.
+        Returns the generator output in kVAr.
 
-        :return: The filter absorbed power in kVAr.
+        :return: The generator output in kVAr.
         :rtype: float
         """
         pass
 
-    def GetCurrentMagnitude(self, dOrder: float) -> float:
+    def GetFaultRedComponentMVA(self) -> float:
         """
-        Returns the current magnitude in per unit on the network base for the harmonic order.
+        Returns the red phase component of fault level in MVA.
 
-        :param dOrder: The harmonic order.
-        :type dOrder: float
-        :return: The current magnitude in per unit.
+        :return: The red phase component of fault level in MVA.
         :rtype: float
         """
         pass
 
-    def GetCurrentAngle(self, dOrder: float) -> float:
+    def GetFaultYellowComponentMVA(self) -> float:
         """
-        Returns the current angle in radians for the harmonic order.
+        Returns the yellow phase component of fault level in MVA.
 
-        :param dOrder: The harmonic order.
-        :type dOrder: float
-        :return: The current angle in radians.
+        :return: The yellow phase component of fault level in MVA.
+        :rtype: float
+        """
+        pass
+
+    def GetFaultBlueComponentMVA(self) -> float:
+        """
+        Returns the blue phase component of fault level in MVA.
+
+        :return: The blue phase component of fault level in MVA.
+        :rtype: float
+        """
+        pass
+
+    def GetFaultPositiveComponentMVA(self) -> float:
+        """
+        Returns the positive sequence component of fault level in MVA.
+
+        :return: The positive sequence component of fault level in MVA.
+        :rtype: float
+        """
+        pass
+
+    def GetFaultNegativeComponentMVA(self) -> float:
+        """
+        Returns the negative sequence component of fault level in MVA.
+
+        :return: The negative sequence component of fault level in MVA.
+        :rtype: float
+        """
+        pass
+
+    def GetFaultZeroComponentMVA(self) -> float:
+        """
+        Returns the zero sequence component of fault level in MVA.
+
+        :return: The zero sequence component of fault level in MVA.
         :rtype: float
         """
         pass

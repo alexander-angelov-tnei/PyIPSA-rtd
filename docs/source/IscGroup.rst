@@ -1,5 +1,5 @@
 IscGroup
 ============
 
-.. automodule:: src.IscGroup
+.. autoclass:: ipsa.IscGroup
    :members:

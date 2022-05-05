@@ -3,7 +3,7 @@ from typing import List, overload
 
 class IscDiagram:
     """
-    The IscDiagram class provides access to graphical data on a single Ipsa diagram.
+    The ``IscDiagram`` class provides access to graphical data on a single Ipsa diagram.
     These functions allow network components to be drawn, display options to be set and deleted.
 
     The creation of items on the diagram also creates the associated network components.

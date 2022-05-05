@@ -1,7 +1,7 @@
-class IscLoad:
+class IscProtectionDevice:
     """
-    The IscLoad class provides access to an Ipsa load,
-    to set and get data values and to retrieve load flow and fault level results.
+    The IscProtectionDevice class provides access to a single protection device, such as a relay,
+    allowing data to be set and cleared.
     """
     def SetName(self, strName: str) -> bool:
         """
@@ -110,78 +110,3 @@ class IscLoad:
         """
         pass
 
-    def GetPowerMagnitudeMVA(self) -> float:
-        """
-        Returns the load in MVA.
-
-        :return: The load in MVA.
-        :rtype: float
-        """
-        pass
-
-    def GetPowerMagnitudekVA(self) -> float:
-        """
-        Returns the load in kVA.
-
-        :return: The load in kVA.
-        :rtype: float
-        """
-        pass
-
-    def GetRealPowerMW(self) -> float:
-        """
-        Returns the load in MW.
-
-        :return: The load in MW.
-        :rtype: float
-        """
-        pass
-
-    def GetReactivePowerMVAr(self) -> float:
-        """
-        Returns the load in MVAr.
-
-        :return: The load in MVAr.
-        :rtype: float
-        """
-        pass
-
-    def GetRealPowerkW(self) -> float:
-        """
-        Returns the load in kW.
-
-        :return: The load in kW.
-        :rtype: float
-        """
-        pass
-
-    def GetReactivePowerkVAr(self) -> float:
-        """
-        Returns the load in kVAr.
-
-        :return: The load in kVAr.
-        :rtype: float
-        """
-        pass
-
-    def GetCurrentMagnitude(self, dOrder: float) -> float:
-        """
-        Returns the current magnitude in per unit on the network base for the harmonic order.
-
-        :param dOrder: The harmonic order.
-        :type dOrder: float
-        :return: The current magnitude in per unit.
-        :rtype: float
-        """
-        pass
-
-    def GetCurrentAngle(self, dOrder: float) -> float:
-        """
-        Returns the current angle in radians for the harmonic order.
-
-        :param dOrder: The harmonic order.
-        :type dOrder: float
-        :return: The current angle in radians.
-        :rtype: float
-        """
-        pass

@@ -1,7 +1,6 @@
 class IscNetworkData:
     """
-    The IscNetworkData class provides access to the Ipsa network data such as the system base MVA,
-    to set and get data values.
+    Provides access to the IPSA network data.
     """
     def GetIValue(self, nFieldIndex: int) -> int:
         """
