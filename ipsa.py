@@ -9330,8 +9330,7 @@ class IscNetwork:
 
         :param nUID: The UID of component. nUID may be the UID of a load, generator, grid infeed or Universal Machine.
         :type nUID: int
-        :return: The profile for the component UID, 0 if the component nUID does not have a profile assigned to it,
-        or if nUID is not a load, generator, grid infeed or universal machine.
+        :return: The profile for the component UID, 0 if the component nUID does not have a profile assigned to it, or if nUID is not a load, generator, grid infeed or universal machine.
         :rtype: int
         """
         pass
@@ -10686,8 +10685,7 @@ class IscNetwork:
 
     def GetGeneratorProfilePQActuals(self):
         """
-        Returns a dictionary of all IscGeneratorProfilePQActual objects in the network for actual generator profiles.
-        The keys are the profile UIDs and the values are the IscGeneratorProfilePQActual objects.
+        Returns a dictionary of all IscGeneratorProfilePQActual objects in the network for actual generator profiles. The keys are the profile UIDs and the values are the IscGeneratorProfilePQActual objects.
 
         :return: A dictionary of all IscGeneratorProfilePQActual objects in the network for actual generator profiles.
         :rtype: dict(int,IscGeneratorProfilePQActual)
@@ -10700,16 +10698,14 @@ class IscNetwork:
         profiles.
         The keys are the profile UIDs and the values are the IscUMachineProfilePQActual objects.
 
-        :return: A dictionary of all IscUMachineProfilePQActual objects in the network for actual universal machine
-        profiles.
+        :return: A dictionary of all IscUMachineProfilePQActual objects in the network for actual universal machine profiles.
         :rtype: dict(int,IscUMachineProfilePQActual)
         """
         pass
 
     def GetLoadProfilePQScales(self):
         """
-        Returns a dictionary of all IscLoadProfilePQScale objects in the network for scaled load profiles.
-        The keys are the profile UIDs and the values are the IscLoadProfilePQScale objects.
+        Returns a dictionary of all IscLoadProfilePQScale objects in the network for scaled load profiles. The keys are the profile UIDs and the values are the IscLoadProfilePQScale objects.
 
         :return: A dictionary of all IscLoadProfilePQScale objects in the network for scaled load profiles.
         :rtype: dict(int,IscLoadProfilePQScale)
@@ -10718,8 +10714,7 @@ class IscNetwork:
 
     def GetGeneratorProfilePQScales(self):
         """
-        Returns a dictionary of all IscGeneratorProfilePQScale objects in the network for scaled generator profiles.
-        The keys are the profile UIDs and the values are the IscGeneratorProfilePQScale objects.
+        Returns a dictionary of all IscGeneratorProfilePQScale objects in the network for scaled generator profiles. The keys are the profile UIDs and the values are the IscGeneratorProfilePQScale objects.
 
         :return: A dictionary of all IscGeneratorProfilePQScale objects in the network for scaled generator profiles.
         :rtype: dict(int,IscGeneratorProfilePQScale)
@@ -10732,8 +10727,7 @@ class IscNetwork:
 
         :param strName: The profile name.
         :type strName: str
-        :return: IscLoadProfilePQActual object for the actual MW/MVAr load profile.
-        Returns None if a profile cannot be found.
+        :return: IscLoadProfilePQActual object for the actual MW/MVAr load profile. Returns None if a profile cannot be found.
         :rtype: IscLoadProfilePQActual
         """
         pass
@@ -10744,8 +10738,7 @@ class IscNetwork:
 
         :param strName: The profile name.
         :type strName: str
-        :return: IscGeneratorProfilePQActual object for the actual MW/MVAr generator profile.
-        Returns None if a profile cannot be found.
+        :return: IscGeneratorProfilePQActual object for the actual MW/MVAr generator profile. Returns None if a profile cannot be found.
         :rtype: IscGeneratorProfilePQActual
         """
         pass
@@ -10757,8 +10750,7 @@ class IscNetwork:
 
         :param strName: The profile name.
         :type strName: str
-        :return: IscUMachineProfilePQActual object for the actual MW/MVAr universal machine profile.
-        Returns None if a profile cannot be found.
+        :return: IscUMachineProfilePQActual object for the actual MW/MVAr universal machine profile. Returns None if a profile cannot be found.
         :rtype: IscUMachineProfilePQActual
         """
         pass
@@ -10769,8 +10761,7 @@ class IscNetwork:
 
         :param strName: The profile name.
         :type strName: str
-        :return: IscLoadProfilePQScale object for the scaled MW/MVAr load profile.
-        Returns None if a profile cannot be found.
+        :return: IscLoadProfilePQScale object for the scaled MW/MVAr load profile. Returns None if a profile cannot be found.
         :rtype: IscLoadProfilePQScale
         """
         pass
@@ -10781,8 +10772,7 @@ class IscNetwork:
 
         :param strName: The profile name.
         :type strName: str
-        :return: IscGeneratorProfilePQScale object for the scaled MW/MVAr generator profile.
-        Returns None if a profile cannot be found.
+        :return: IscGeneratorProfilePQScale object for the scaled MW/MVAr generator profile. Returns None if a profile cannot be found.
         :rtype: IscGeneratorProfilePQScale
         """
         pass
@@ -11168,8 +11158,7 @@ class IscNetwork:
         in percentage terms. GetNumberOutsideLimits() must be called first.
         The name returned is the Python name of the component, e.g. Busbar1.Busbar2.Transformer
 
-        :return: A string detailing the busbar, branch or transformer with the most excessive overload/overvoltage
-        in percentage terms.
+        :return: A string detailing the busbar, branch or transformer with the most excessive overload/overvoltage in percentage terms.
         :rtype: str
         """
         pass
@@ -11355,10 +11344,7 @@ class IscNetwork:
 
         :param nUID: The contingency study UID.
         :type nUID: int
-        :param bUseProfiles: If False then the contingency study is performed using the standard load and generator data.
-        If True then the contingency study is performed using load and generator profiles assigned in the network.
-        In this instance the switching operation is performed first followed by a load flow calculation for
-        all of the profile categories.
+        :param bUseProfiles: If False then the contingency study is performed using the standard load and generator data. If True then the contingency study is performed using load and generator profiles assigned in the network. In this instance the switching operation is performed first followed by a load flow calculation for all of the profile categories.
         :type bUseProfiles: bool
         """
         pass
@@ -11375,9 +11361,7 @@ class IscNetwork:
 
         :param nDepth: The depth of the study.
         :type nDepth: int
-        :param bExtendToBreakers: If False then individual branches and transfers are switched out during the study.
-        If True then the nearest circuit breakers are switched out allowing multiple components to be switched
-        for each study.
+        :param bExtendToBreakers: If False then individual branches and transfers are switched out during the study. If True then the nearest circuit breakers are switched out allowing multiple components to be switched for each study.
         :type bExtendToBreakers: bool
         """
         pass
@@ -11388,9 +11372,7 @@ class IscNetwork:
 
         :param nDepth: The depth of the study.
         :type nDepth: int
-        :param bExtendToBreakers: If False then individual branches and transfers are switched out during the study.
-        If True then the nearest circuit breakers are switched out allowing multiple components to be switched
-        for each study.
+        :param bExtendToBreakers: If False then individual branches and transfers are switched out during the study. If True then the nearest circuit breakers are switched out allowing multiple components to be switched for each study.
         :type bExtendToBreakers: bool
         :param lBusbarsRequired: The specified list of busbars.
         :type lBusbarsRequired: list(IscBusbar)
