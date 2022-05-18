@@ -17,6 +17,55 @@ All extension data is handled transparently by the IPSA filing modules and is no
 
 The field names for extended data fields **should not** contain spaces. Only alphanumeric characters and underscores are permitted.
 
+Field Values
+-------------
+
+.. list-table:: **IscNetComponent Field Values - Types**
+   :widths: 2 2 2 2 2 2
+   :class: tight-table
+
+   * - Unknown
+     - Busbar
+     - Load
+     - Generator
+     - Induction Machine
+     - Harmonic Data
+   * - Harmonic Filter
+     - Mechanical Switched Capacitor
+     - Static Var Compensator
+     - Battery
+     - DC Machine
+     - Universal Machine
+   * - Grid Infeed
+     - Line
+     - Transformer
+     - ThreeWTransformer
+     - AC – DC Converter
+     - Motor Generator Set
+   * - AVR
+     - Governor
+     - DC Converter Controller
+     - AC Converter Controller
+     - DC Machine Controller
+     - Plugin Model
+   * - Circuit Breaker
+     - Series Voltage Regulator
+     - Protection Container
+     - Annotation
+     - Load Flow Analysis
+     - Fault Level Analysis
+   * - Motor Start Analysis
+     - Breaker Duty Analysis
+     - Transient Stability Analysis
+     - Harmonic Analysis
+     - Protection Analysis
+     - Automation Analysis
+   * - Contingency Analysis
+     - Contingency Study
+     - Network
+     - Results Display Type
+     - Load Flow Results Display
+     - SQL Connection instance
 
 IscNetComponent Class
 ----------------------

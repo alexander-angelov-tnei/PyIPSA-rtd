@@ -11,8 +11,6 @@ Starting from IPSA 2.3.2 there are two ways of launching IPSA 2, either from wit
 
 ::
 
-    # Import print module
-    from __future__ import print_function
     # Initialise Scripting interface into IPSA+
     import ipsa
     # Get IPSA scripting instance
@@ -134,8 +132,6 @@ The sample code below provides some simple examples.
 
 ::
 
-    # Import print module
-    from __future__ import print_function
     # Initialise Scripting interface into IPSA 2
     import ipsa
     ipsascript = ipsa.IscInterface()
@@ -167,8 +163,6 @@ For clarity no error checking is included in this example. For robust code, it i
 
 ::
 
-    # Import print module
-    from __future__ import print_function
     # Initialise Scripting interface into IPSA
     import ipsa
 

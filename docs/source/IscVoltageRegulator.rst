@@ -14,6 +14,9 @@ Field Values
    * - Type
      - Field Name
      - Description
+   * - Integer
+     - FromUID
+     - Gets the unique ID for busbar.
    * - String
      - FromBusName
      - Returns the busbar name at the From end of the branch the regulator is located on.

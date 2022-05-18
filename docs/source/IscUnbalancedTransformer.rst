@@ -46,6 +46,7 @@ Field Values
         - 3 = DD
         - 4 = XD
         - 5 = YD
+
         where:
 
         - X = Earthed star

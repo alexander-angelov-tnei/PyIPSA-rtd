@@ -15,3 +15,4 @@ Analysis classes
     IscAnalysisFL
     IscAnalysisHM
     IscAnalysisDCLF
+    IscAnalysisAF

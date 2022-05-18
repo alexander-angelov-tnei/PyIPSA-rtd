@@ -44,6 +44,31 @@ Field Values
    * - String
      - Comment
      - Gets the comments.
+   * - Integer
+     - ArcBusbarConfiguration
+     - Specific busbar configuration for this bus according to the definitions penned out by IEEE-1584 standard:
+
+        - 0 = Unknown
+        - 1 = VCB (vertical closed box)
+        - 2 = VCBB (vertical closed bolted box)
+        - 3 = HCB (horizontal closed box)
+        - 4 = VOA (vertical open air box)
+        - 5 = HOA (horizontal open air box)
+   * - Float
+     - ArcEnclosureWidthMM
+     - Width of the busbar enclosure for the arcflash in mm.
+   * - Float
+     - ArcEnclosureHeightMM
+     - Height of the busbar enclosure for the arcflash in mm.
+   * - Float
+     - ArcEnclosureDepthMM
+     - Depth of the busbar enclosure for the arcflash in mm.
+   * - Float
+     - ArcConductorGapMM
+     - Air gap between the conductors that the arc flash jumps across in mm.
+   * - Float
+     - ArcWorkingDistanceMM
+     - Working distance for the bus container in mm.
 
 IscBusbar Class
 ----------------

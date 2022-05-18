@@ -97,54 +97,11 @@ class IscNetComponent:
         """
         pass
 
-    def DisplayResultsTable(self) -> int:
+    def GetType(self) -> int:
         """
-        Returns an integer identifying the instance type of table.
+        Returns an integer that matches one of the class' field indices (e.g., IscNetComponent.Busbar).
 
-        :return: The type of table displayed:
-
-            - 0 = Unknown
-            - 1 = Busbar
-            - 2 = Load
-            - 3 = Generator
-            - 4 = Induction Machine
-            - 5 = Harmonic Data
-            - 6 = Harmonic Filter
-            - 7 = Mechanical Switched Capacitor
-            - 8 = Static Var Compensator
-            - 9 = Battery
-            - 10 = DC Machine
-            - 11 = Universal Machine
-            - 12 = Grid Infeed
-            - 13 = Line
-            - 14 = Transformer
-            - 15 = AC – DC Converter
-            - 16 = Motor Generator Set
-            - 17 = AVR
-            - 18 = Governor
-            - 19 = DC Converter Controller
-            - 20 = AC Converter Controller
-            - 21 = DC Machine Controller
-            - 22 = Plugin Model
-            - 23 = Circuit Breaker
-            - 24 = Series Voltage Regulator
-            - 25 = Protection Container
-            - 26 = Annotation
-            - 27 = Load Flow Analysis
-            - 28 = Fault Level Analysis
-            - 29 = Motor Start Analysis
-            - 30 = Breaker Duty Analysis
-            - 31 = Transient Stability Analysis
-            - 32 = Harmonic Analysis
-            - 33 = Protection Analysis
-            - 34 = Automation Analysis
-            - 35 = Contingency Analysis
-            - 36 = Contingency Study
-            - 37 = Network
-            - 38 = Results Display Type
-            - 39 = Load Flow Results Display
-            - 40 = SQL Connection instance
-
+        :return: The integer that matches one of the class' field indices.
         :rtype: int
         """
         pass

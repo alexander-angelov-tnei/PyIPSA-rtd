@@ -10,7 +10,7 @@ The ``IscPlugin`` class provides access to an IPSA plugin, to set and get data v
     3. Set the ``Plugin`` field value of the component itself to the UID of the plugin created in step 1
     4. The plugin parameters can now be set using the normal ``SetIntParameterValue`` function calls etc
 
-    a. Note that the ``SetIValue`` functions are used only to get and set general ``IscPlugin`` variables such as ``Name`` and ``Type``
+    a. Note that the ``Set...``/``Get...`` functions are used only to get and set ``IscPlugin`` **field values** such as ``Name`` and ``Type``
 
 Refer to the documentation provided with each plugin to determine the usage and parameter values available.
 

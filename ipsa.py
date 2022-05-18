@@ -414,9 +414,131 @@ class Isc3WTransformer:
         """
         pass
 
+class IscAnalysisAF:
+    """
+    Analysis class for the ArcFlash analysis.
+    """
+    def GetIValue(self, nFieldIndex: int) -> int:
+        """
+        Returns an integer value for the enumerated field.
+
+        :param nFieldIndex: The given enumerated field.
+        :type nFieldIndex: int
+        :return: The integer value for the field.
+        :rtype: int
+        """
+        pass
+
+    def GetDValue(self, nFieldIndex: int) -> float:
+        """
+        Returns a float value for the enumerated field.
+
+        :param nFieldIndex: The given enumerated field.
+        :type nFieldIndex: int
+        :return: The float value for the field.
+        :rtype: float
+        """
+        pass
+
+    def GetSValue(self, nFieldIndex: int) -> str:
+        """
+        Returns a string value for the enumerated field.
+
+        :param nFieldIndex: The given enumerated field.
+        :type nFieldIndex: int
+        :return: The string value for the field.
+        :rtype: str
+        """
+        pass
+
+    def GetBValue(self, nFieldIndex: int) -> bool:
+        """
+        Returns a boolean value for the enumerated field.
+
+        :param nFieldIndex: The given enumerated field.
+        :type nFieldIndex: int
+        :return: The boolean value for the field.
+        :rtype: bool
+        """
+        pass
+
+    def SetIValue(self, nFieldIndex: int, nValue: int) -> bool:
+        """
+        Sets the integer value for the enumerated field.
+
+        :param nFieldIndex: The given enumerated field.
+        :type nFieldIndex: int
+        :param nValue: The integer value that will be set.
+        :type nValue: int
+        :return: True if successful.
+        :rtype: bool
+        """
+        pass
+
+    def SetDValue(self, nFieldIndex: int, dValue: float) -> bool:
+        """
+        Sets the float value for the enumerated field.
+
+        :param nFieldIndex: The given enumerated field.
+        :type nFieldIndex: int
+        :param dValue: The float value that will be set.
+        :type dValue: float
+        :return: True if successful.
+        :rtype: bool
+        """
+        pass
+
+    def SetSValue(self, nFieldIndex: int, strValue: str) -> bool:
+        """
+        Sets the string value for the enumerated field.
+
+        :param nFieldIndex: The given enumerated field.
+        :type nFieldIndex: int
+        :param strValue: The string value that will be set.
+        :type strValue: str
+        :return: True if successful.
+        :rtype: bool
+        """
+        pass
+
+    def SetBValue(self, nFieldIndex: int, bValue: bool) -> bool:
+        """
+        Sets the integer value for the enumerated field.
+
+        :param nFieldIndex: The given enumerated field.
+        :type nFieldIndex: int
+        :param bValue: The boolean value that will be set.
+        :type bValue: bool
+        :return: True if successful.
+        :rtype: bool
+        """
+        pass
+
+    def GetFieldType(self, nFieldIndex: int) -> str:
+        """
+        Returns the field type as a string for the enumerated field.
+
+        :param nFieldIndex: The given enumerated field.
+        :type nFieldIndex: int
+        :return: The field type.
+        :rtype: str
+        """
+        pass
+
+    def GetFieldName(self, nFieldIndex: int) -> str:
+        """
+        Returns the field name as a string for the enumerated field.
+
+        :param nFieldIndex: The given enumerated field.
+        :type nFieldIndex: int
+        :return: The field name.
+        :rtype: str
+        """
+        pass
+
 class IscAnalysisLF:
     """
-    There are separate classes for the load flow analysis.
+    Analysis class for the load flow analysis.
     """
     def GetIValue(self, nFieldIndex: int) -> int:
         """
@@ -538,7 +660,7 @@ class IscAnalysisLF:
 
 class IscAnalysisFL:
     """
-    There are separate classes for the fault level analysis.
+    Analysis class for the fault level analysis.
     Motor start analysis options are provided under the fault level analysis class.
     """
     def GetIValue(self, nFieldIndex: int) -> int:
@@ -680,7 +802,7 @@ class IscAnalysisFL:
 
 class IscAnalysisHM:
     """
-    There are separate classes for the harmonic analysis.
+    Analysis class for the harmonic analysis.
     """
     def GetIValue(self, nFieldIndex: int) -> int:
         """
@@ -802,7 +924,7 @@ class IscAnalysisHM:
 
 class IscAnalysisDCLF:
     """
-    Classes for the DC load flow analysis.
+    Analysis class for the DC load flow analysis.
     """
     def GetIValue(self, nFieldIndex: int) -> int:
         """
@@ -3925,6 +4047,22 @@ class IscDiagram:
         """
         pass
 
+    def CreateBusbarCircular(self, strName: str, dX: float, dY: float) -> int:
+        """
+        Creates a new busbar component on the diagram.
+        A hexagonal busbar symbol is a circle.
+
+        :param strName: The busbar name.
+        :type strName: str
+        :param dX: The busbar x coordinate.
+        :type dX: float
+        :param dY: The busbar y coordinate.
+        :type dY: float
+        :return: The unique ID of the new busbar.
+        :rtype: int
+        """
+        pass
+
     def CreateBusbarRectangular(self, strName: str, bHorizontal: bool, dX: float, dY: float) -> int:
         """
         Creates a new busbar component on the diagram.
@@ -6809,54 +6947,11 @@ class IscNetComponent:
         """
         pass
 
-    def DisplayResultsTable(self) -> int:
+    def GetType(self) -> int:
         """
-        Returns an integer identifying the instance type of table.
+        Returns an integer that matches one of the class field indices (e.g., IscNetComponent.Busbar).
 
-        :return: The type of table displayed:
-
-            - 0 = Unknown
-            - 1 = Busbar
-            - 2 = Load
-            - 3 = Generator
-            - 4 = Induction Machine
-            - 5 = Harmonic Data
-            - 6 = Harmonic Filter
-            - 7 = Mechanical Switched Capacitor
-            - 8 = Static Var Compensator
-            - 9 = Battery
-            - 10 = DC Machine
-            - 11 = Universal Machine
-            - 12 = Grid Infeed
-            - 13 = Line
-            - 14 = Transformer
-            - 15 = AC – DC Converter
-            - 16 = Motor Generator Set
-            - 17 = AVR
-            - 18 = Governor
-            - 19 = DC Converter Controller
-            - 20 = AC Converter Controller
-            - 21 = DC Machine Controller
-            - 22 = Plugin Model
-            - 23 = Circuit Breaker
-            - 24 = Series Voltage Regulator
-            - 25 = Protection Container
-            - 26 = Annotation
-            - 27 = Load Flow Analysis
-            - 28 = Fault Level Analysis
-            - 29 = Motor Start Analysis
-            - 30 = Breaker Duty Analysis
-            - 31 = Transient Stability Analysis
-            - 32 = Harmonic Analysis
-            - 33 = Protection Analysis
-            - 34 = Automation Analysis
-            - 35 = Contingency Analysis
-            - 36 = Contingency Study
-            - 37 = Network
-            - 38 = Results Display Type
-            - 39 = Load Flow Results Display
-            - 40 = SQL Connection instance
-
+        :return: The integer that matches one of the class' field indices.
         :rtype: int
         """
         pass
@@ -7334,12 +7429,7 @@ class IscNetwork:
         """
         Returns a dictionary of busbars. The keys are the busbar names.
 
-        :param bFetchFromSystem: Setting bFetchFromSystem to True forces Ipsa to rebuild
-            its internal component data maps.
-            Setting bFetchFromSystem to False will only rebuild the internal component data maps if
-            components have been added or deleted since the last Get… function call.
-            If the script creates new data components during its execution then the internal component data maps
-            will always be rebuilt and bFetchFromSystem can be True or False.
+        :param bFetchFromSystem: If set to True, IPSA rebuilds the data maps. If set to False, it only rebuilds if a new component has been built since last Get() function.
         :type bFetchFromSystem: bool
         :return: Dictionary of busbars.
         :rtype: dict(str,IscBusbar)
@@ -7350,12 +7440,7 @@ class IscNetwork:
         """
         Returns a tuple of busbar UIDs, sorted in ascending order of voltage and then by busbar name.
 
-        :param bFetchFromSystem: Setting bFetchFromSystem to True forces Ipsa to rebuild
-            its internal component data maps.
-            Setting bFetchFromSystem to False will only rebuild the internal component data maps if
-            components have been added or deleted since the last Get… function call.
-            If the script creates new data components during its execution then the internal component data maps
-            will always be rebuilt and bFetchFromSystem can be True or False.
+        :param bFetchFromSystem: If set to True, IPSA rebuilds the data maps. If set to False, it only rebuilds if a new component has been built since last Get() function.
         :type bFetchFromSystem: bool
         :return: Tuple of busbars UIDs.
         :rtype: tuple(int)
@@ -7369,12 +7454,7 @@ class IscNetwork:
 
         :param nBusbarUID: The selected busbar UID.
         :type nBusbarUID: int
-        :param bFetchFromSystem: Setting bFetchFromSystem to True forces Ipsa to rebuild
-            its internal component data maps.
-            Setting bFetchFromSystem to False will only rebuild the internal component data maps if
-            components have been added or deleted since the last Get… function call.
-            If the script creates new data components during its execution then the internal component data maps
-            will always be rebuilt and bFetchFromSystem can be True or False.
+        :param bFetchFromSystem: If set to True, IPSA rebuilds the data maps. If set to False, it only rebuilds if a new component has been built since last Get() function.
         :type bFetchFromSystem: bool
         :return: Tuple of busbars UIDs.
         :rtype: tuple(int)
@@ -7388,12 +7468,7 @@ class IscNetwork:
 
         :param nBusbarUID: The selected busbar UID.
         :type nBusbarUID: int
-        :param bFetchFromSystem: Setting bFetchFromSystem to True forces Ipsa to rebuild
-            its internal component data maps.
-            Setting bFetchFromSystem to False will only rebuild the internal component data maps if
-            components have been added or deleted since the last Get… function call.
-            If the script creates new data components during its execution then the internal component data maps
-            will always be rebuilt and bFetchFromSystem can be True or False.
+        :param bFetchFromSystem: If set to True, IPSA rebuilds the data maps. If set to False, it only rebuilds if a new component has been built since last Get() function.
         :type bFetchFromSystem: bool
         :return: Tuple of transformer UIDs.
         :rtype: tuple(int)
@@ -7407,12 +7482,7 @@ class IscNetwork:
 
         :param nBusbarUID: The selected busbar UID.
         :type nBusbarUID: int
-        :param bFetchFromSystem: Setting bFetchFromSystem to True forces Ipsa to rebuild
-            its internal component data maps.
-            Setting bFetchFromSystem to False will only rebuild the internal component data maps if
-            components have been added or deleted since the last Get… function call.
-            If the script creates new data components during its execution then the internal component data maps
-            will always be rebuilt and bFetchFromSystem can be True or False.
+        :param bFetchFromSystem: If set to True, IPSA rebuilds the data maps. If set to False, it only rebuilds if a new component has been built since last Get() function.
         :type bFetchFromSystem: bool
         :return: Tuple of 3-winding transformer UIDs.
         :rtype: tuple(int)
@@ -7426,12 +7496,7 @@ class IscNetwork:
 
         :param nBusbarUID: The selected busbar UID.
         :type nBusbarUID: int
-        :param bFetchFromSystem: Setting bFetchFromSystem to True forces Ipsa to rebuild
-            its internal component data maps.
-            Setting bFetchFromSystem to False will only rebuild the internal component data maps if
-            components have been added or deleted since the last Get… function call.
-            If the script creates new data components during its execution then the internal component data maps
-            will always be rebuilt and bFetchFromSystem can be True or False.
+        :param bFetchFromSystem: If set to True, IPSA rebuilds the data maps. If set to False, it only rebuilds if a new component has been built since last Get() function.
         :type bFetchFromSystem: bool
         :return: Tuple of unbalanced branch UIDs.
         :rtype: tuple(int)
@@ -7443,12 +7508,7 @@ class IscNetwork:
         Returns a dictionary of IscBranch instances.
         Key values (sPyName) are the Python names and the associated values are IscBranch instances.
 
-        :param bFetchFromSystem: Setting bFetchFromSystem to True forces Ipsa to rebuild
-            its internal component data maps.
-            Setting bFetchFromSystem to False will only rebuild the internal component data maps if
-            components have been added or deleted since the last Get… function call.
-            If the script creates new data components during its execution then the internal component data maps
-            will always be rebuilt and bFetchFromSystem can be True or False.
+        :param bFetchFromSystem: If set to True, IPSA rebuilds the data maps. If set to False, it only rebuilds if a new component has been built since last Get() function.
         :type bFetchFromSystem: bool
         :return: Dictionary of branches.
         :rtype: dict(str,IscBranch)
@@ -7462,12 +7522,7 @@ class IscNetwork:
 
         :param nBusbarUID: The selected busbar UID.
         :type nBusbarUID: int
-        :param bFetchFromSystem: Setting bFetchFromSystem to True forces Ipsa to rebuild
-            its internal component data maps.
-            Setting bFetchFromSystem to False will only rebuild the internal component data maps if
-            components have been added or deleted since the last Get… function call.
-            If the script creates new data components during its execution then the internal component data maps
-            will always be rebuilt and bFetchFromSystem can be True or False.
+        :param bFetchFromSystem: If set to True, IPSA rebuilds the data maps. If set to False, it only rebuilds if a new component has been built since last Get() function.
         :type bFetchFromSystem: bool
         :return: Tuple of unbalanced transformer UIDs.
         :rtype: tuple(int)
@@ -7479,12 +7534,7 @@ class IscNetwork:
         Returns a dictionary of IscTransformer instances.
         Keys (sPyName) are the Python names and the associated values are IscTransformer instances.
 
-        :param bFetchFromSystem: Setting bFetchFromSystem to True forces Ipsa to rebuild
-            its internal component data maps.
-            Setting bFetchFromSystem to False will only rebuild the internal component data maps if
-            components have been added or deleted since the last Get… function call.
-            If the script creates new data components during its execution then the internal component data maps
-            will always be rebuilt and bFetchFromSystem can be True or False.
+        :param bFetchFromSystem: If set to True, IPSA rebuilds the data maps. If set to False, it only rebuilds if a new component has been built since last Get() function.
         :type bFetchFromSystem: bool
         :return: Dictionary of transformers.
         :rtype: dict(str,IscTransformer)
@@ -7496,12 +7546,7 @@ class IscNetwork:
         Returns a dictionary of Isc3WTransformer instances.
         Keys (sPyName) are the Python names and the associated values are Isc3WTransformer instances.
 
-        :param bFetchFromSystem: Setting bFetchFromSystem to True forces Ipsa to rebuild
-            its internal component data maps.
-            Setting bFetchFromSystem to False will only rebuild the internal component data maps if
-            components have been added or deleted since the last Get… function call.
-            If the script creates new data components during its execution then the internal component data maps
-            will always be rebuilt and bFetchFromSystem can be True or False.
+        :param bFetchFromSystem: If set to True, IPSA rebuilds the data maps. If set to False, it only rebuilds if a new component has been built since last Get() function.
         :type bFetchFromSystem: bool
         :return: Dictionary of 3WTransformers.
         :rtype: dict(str,Isc3WTransformer)
@@ -7513,12 +7558,7 @@ class IscNetwork:
         Returns a dictionary of IscLoad instances.
         Keys (sPyName) are the Python names and the associated values are IscLoad instances.
 
-        :param bFetchFromSystem: Setting bFetchFromSystem to True forces Ipsa to rebuild
-            its internal component data maps.
-            Setting bFetchFromSystem to False will only rebuild the internal component data maps if
-            components have been added or deleted since the last Get… function call.
-            If the script creates new data components during its execution then the internal component data maps
-            will always be rebuilt and bFetchFromSystem can be True or False.
+        :param bFetchFromSystem: If set to True, IPSA rebuilds the data maps. If set to False, it only rebuilds if a new component has been built since last Get() function.
         :type bFetchFromSystem: bool
         :return: Dictionary of loads.
         :rtype: dict(str,IscLoad)
@@ -7530,12 +7570,7 @@ class IscNetwork:
         Returns a dictionary of IscSynMachine instances.
         Keys (sPyName) are the Python names and the associated values are IscSynMachine instances.
 
-        :param bFetchFromSystem: Setting bFetchFromSystem to True forces Ipsa to rebuild
-            its internal component data maps.
-            Setting bFetchFromSystem to False will only rebuild the internal component data maps if
-            components have been added or deleted since the last Get… function call.
-            If the script creates new data components during its execution then the internal component data maps
-            will always be rebuilt and bFetchFromSystem can be True or False.
+        :param bFetchFromSystem: If set to True, IPSA rebuilds the data maps. If set to False, it only rebuilds if a new component has been built since last Get() function.
         :type bFetchFromSystem: bool
         :return: Dictionary of synchronous machines.
         :rtype: dict(str,IscSynMachine)
@@ -7547,12 +7582,7 @@ class IscNetwork:
         Returns a dictionary of IscGridInfeed instances.
         Keys (sPyName) are the Python names and the associated values are IscGridInfeed instances.
 
-        :param bFetchFromSystem: Setting bFetchFromSystem to True forces Ipsa to rebuild
-            its internal component data maps.
-            Setting bFetchFromSystem to False will only rebuild the internal component data maps if
-            components have been added or deleted since the last Get… function call.
-            If the script creates new data components during its execution then the internal component data maps
-            will always be rebuilt and bFetchFromSystem can be True or False.
+        :param bFetchFromSystem: If set to True, IPSA rebuilds the data maps. If set to False, it only rebuilds if a new component has been built since last Get() function.
         :type bFetchFromSystem: bool
         :return: Dictionary of grid infeeds.
         :rtype: dict(str,IscGridInfeed)
@@ -7564,12 +7594,7 @@ class IscNetwork:
         Returns a dictionary of IscFilter instances.
         Keys (sPyName) are the Python names and the associated values are IscFilter instances.
 
-        :param bFetchFromSystem: Setting bFetchFromSystem to True forces Ipsa to rebuild
-            its internal component data maps.
-            Setting bFetchFromSystem to False will only rebuild the internal component data maps if
-            components have been added or deleted since the last Get… function call.
-            If the script creates new data components during its execution then the internal component data maps
-            will always be rebuilt and bFetchFromSystem can be True or False.
+        :param bFetchFromSystem: If set to True, IPSA rebuilds the data maps. If set to False, it only rebuilds if a new component has been built since last Get() function.
         :type bFetchFromSystem: bool
         :return: Dictionary of filters.
         :rtype: dict(str,IscFilter)
@@ -7581,12 +7606,7 @@ class IscNetwork:
         Returns a dictionary of IscIndMachine instances.
         Keys (sPyName) are the Python names and the associated values are IscIndMachine instances.
 
-        :param bFetchFromSystem: Setting bFetchFromSystem to True forces Ipsa to rebuild
-            its internal component data maps.
-            Setting bFetchFromSystem to False will only rebuild the internal component data maps if
-            components have been added or deleted since the last Get… function call.
-            If the script creates new data components during its execution then the internal component data maps
-            will always be rebuilt and bFetchFromSystem can be True or False.
+        :param bFetchFromSystem: If set to True, IPSA rebuilds the data maps. If set to False, it only rebuilds if a new component has been built since last Get() function.
         :type bFetchFromSystem: bool
         :return: Dictionary of induction machines.
         :rtype: dict(str,IscIndMachine)
@@ -7598,12 +7618,7 @@ class IscNetwork:
         Returns a dictionary of IscMechSwCapacitor instances.
         Keys (sPyName) are the Python names and the associated values are IscMechSwCapacitor instances.
 
-        :param bFetchFromSystem: Setting bFetchFromSystem to True forces Ipsa to rebuild
-            its internal component data maps.
-            Setting bFetchFromSystem to False will only rebuild the internal component data maps if
-            components have been added or deleted since the last Get… function call.
-            If the script creates new data components during its execution then the internal component data maps
-            will always be rebuilt and bFetchFromSystem can be True or False.
+        :param bFetchFromSystem: If set to True, IPSA rebuilds the data maps. If set to False, it only rebuilds if a new component has been built since last Get() function.
         :type bFetchFromSystem: bool
         :return: Dictionary of mechanical switch capacitors.
         :rtype: dict(str,IscMechSwCapacitor)
@@ -7615,12 +7630,7 @@ class IscNetwork:
         Returns a dictionary of IscStaticVC instances.
         Keys (sPyName) are the Python names and the associated values are IscStaticVC instances.
 
-        :param bFetchFromSystem: Setting bFetchFromSystem to True forces Ipsa to rebuild
-            its internal component data maps.
-            Setting bFetchFromSystem to False will only rebuild the internal component data maps if
-            components have been added or deleted since the last Get… function call.
-            If the script creates new data components during its execution then the internal component data maps
-            will always be rebuilt and bFetchFromSystem can be True or False.
+        :param bFetchFromSystem: If set to True, IPSA rebuilds the data maps. If set to False, it only rebuilds if a new component has been built since last Get() function.
         :type bFetchFromSystem: bool
         :return: Dictionary of static var compensators.
         :rtype: dict(str,IscStaticVC)
@@ -7632,12 +7642,7 @@ class IscNetwork:
         Returns a dictionary of IscUMachine instances.
         Keys (sPyName) are the Python names and the associated values are IscUMachine instances.
 
-        :param bFetchFromSystem: Setting bFetchFromSystem to True forces Ipsa to rebuild
-            its internal component data maps.
-            Setting bFetchFromSystem to False will only rebuild the internal component data maps if
-            components have been added or deleted since the last Get… function call.
-            If the script creates new data components during its execution then the internal component data maps
-            will always be rebuilt and bFetchFromSystem can be True or False.
+        :param bFetchFromSystem: If set to True, IPSA rebuilds the data maps. If set to False, it only rebuilds if a new component has been built since last Get() function.
         :type bFetchFromSystem: bool
         :return: Dictionary of universal machines.
         :rtype: dict(str,IscUMachine)
@@ -7649,12 +7654,7 @@ class IscNetwork:
         Returns a dictionary of IscHarmonic instances.
         Keys (sPyName) are the Python names and the associated values are IscHarmonic instances.
 
-        :param bFetchFromSystem: Setting bFetchFromSystem to True forces Ipsa to rebuild
-            its internal component data maps.
-            Setting bFetchFromSystem to False will only rebuild the internal component data maps if
-            components have been added or deleted since the last Get… function call.
-            If the script creates new data components during its execution then the internal component data maps
-            will always be rebuilt and bFetchFromSystem can be True or False.
+        :param bFetchFromSystem: If set to True, IPSA rebuilds the data maps. If set to False, it only rebuilds if a new component has been built since last Get() function.
         :type bFetchFromSystem: bool
         :return: Dictionary of harmonics.
         :rtype: dict(str,IscHarmonic)
@@ -7666,12 +7666,7 @@ class IscNetwork:
         Returns a dictionary of IscCircuitBreaker instances.
         Keys (sPyName) are the Python names and the associated values are IscCircuitBreaker instances.
 
-        :param bFetchFromSystem: Setting bFetchFromSystem to True forces Ipsa to rebuild
-            its internal component data maps.
-            Setting bFetchFromSystem to False will only rebuild the internal component data maps if
-            components have been added or deleted since the last Get… function call.
-            If the script creates new data components during its execution then the internal component data maps
-            will always be rebuilt and bFetchFromSystem can be True or False.
+        :param bFetchFromSystem: If set to True, IPSA rebuilds the data maps. If set to False, it only rebuilds if a new component has been built since last Get() function.
         :type bFetchFromSystem: bool
         :return: Dictionary of circuit breakers.
         :rtype: dict(str,IscCircuitBreaker)
@@ -7683,12 +7678,7 @@ class IscNetwork:
         Returns a dictionary of IscBattery instances.
         Keys (sPyName) are the Python names and the associated values are IscBattery instances.
 
-        :param bFetchFromSystem: Setting bFetchFromSystem to True forces Ipsa to rebuild
-            its internal component data maps.
-            Setting bFetchFromSystem to False will only rebuild the internal component data maps if
-            components have been added or deleted since the last Get… function call.
-            If the script creates new data components during its execution then the internal component data maps
-            will always be rebuilt and bFetchFromSystem can be True or False.
+        :param bFetchFromSystem: If set to True, IPSA rebuilds the data maps. If set to False, it only rebuilds if a new component has been built since last Get() function.
         :type bFetchFromSystem: bool
         :return: Dictionary of batteries.
         :rtype: dict(str,IscBattery)
@@ -7700,12 +7690,7 @@ class IscNetwork:
         Returns a dictionary of IscDCMachine instances.
         Keys (sPyName) are the Python names and the associated values are IscDCMachine instances.
 
-        :param bFetchFromSystem: Setting bFetchFromSystem to True forces Ipsa to rebuild
-            its internal component data maps.
-            Setting bFetchFromSystem to False will only rebuild the internal component data maps if
-            components have been added or deleted since the last Get… function call.
-            If the script creates new data components during its execution then the internal component data maps
-            will always be rebuilt and bFetchFromSystem can be True or False.
+        :param bFetchFromSystem: If set to True, IPSA rebuilds the data maps. If set to False, it only rebuilds if a new component has been built since last Get() function.
         :type bFetchFromSystem: bool
         :return: Dictionary of DC machines.
         :rtype: dict(str,IscDCMachine)
@@ -7717,12 +7702,7 @@ class IscNetwork:
         Returns a dictionary of IscConverter instances.
         Keys (sPyName) are the Python names and the associated values are IscConverter instances.
 
-        :param bFetchFromSystem: Setting bFetchFromSystem to True forces Ipsa to rebuild
-            its internal component data maps.
-            Setting bFetchFromSystem to False will only rebuild the internal component data maps if
-            components have been added or deleted since the last Get… function call.
-            If the script creates new data components during its execution then the internal component data maps
-            will always be rebuilt and bFetchFromSystem can be True or False.
+        :param bFetchFromSystem: If set to True, IPSA rebuilds the data maps. If set to False, it only rebuilds if a new component has been built since last Get() function.
         :type bFetchFromSystem: bool
         :return: Dictionary of converters.
         :rtype: dict(str,IscConverter)
@@ -7734,12 +7714,7 @@ class IscNetwork:
         Returns a dictionary of IscMGSet instances.
         Keys (sPyName) are the Python names and the associated values are IscMGSet instances.
 
-        :param bFetchFromSystem: Setting bFetchFromSystem to True forces Ipsa to rebuild
-            its internal component data maps.
-            Setting bFetchFromSystem to False will only rebuild the internal component data maps if
-            components have been added or deleted since the last Get… function call.
-            If the script creates new data components during its execution then the internal component data maps
-            will always be rebuilt and bFetchFromSystem can be True or False.
+        :param bFetchFromSystem: If set to True, IPSA rebuilds the data maps. If set to False, it only rebuilds if a new component has been built since last Get() function.
         :type bFetchFromSystem: bool
         :return: Dictionary of MG sets.
         :rtype: dict(str,IscMGSet)
@@ -7751,12 +7726,7 @@ class IscNetwork:
         Returns a dictionary of IscProtectionDevice instances.
         Keys (sPyName) are the Python names and the associated values are IscProtectionDevice instances.
 
-        :param bFetchFromSystem: Setting bFetchFromSystem to True forces Ipsa to rebuild
-            its internal component data maps.
-            Setting bFetchFromSystem to False will only rebuild the internal component data maps if
-            components have been added or deleted since the last Get… function call.
-            If the script creates new data components during its execution then the internal component data maps
-            will always be rebuilt and bFetchFromSystem can be True or False.
+        :param bFetchFromSystem: If set to True, IPSA rebuilds the data maps. If set to False, it only rebuilds if a new component has been built since last Get() function.
         :type bFetchFromSystem: bool
         :return: Dictionary of protection devices.
         :rtype: dict(str,IscProtectionDevice)
@@ -7768,12 +7738,7 @@ class IscNetwork:
         Returns a dictionary of IscUnbalancedLoad instances.
         Keys (sPyName) are the Python names and the associated values are IscUnbalancedLoad instances.
 
-        :param bFetchFromSystem: Setting bFetchFromSystem to True forces Ipsa to rebuild
-            its internal component data maps.
-            Setting bFetchFromSystem to False will only rebuild the internal component data maps if
-            components have been added or deleted since the last Get… function call.
-            If the script creates new data components during its execution then the internal component data maps
-            will always be rebuilt and bFetchFromSystem can be True or False.
+        :param bFetchFromSystem: If set to True, IPSA rebuilds the data maps. If set to False, it only rebuilds if a new component has been built since last Get() function.
         :type bFetchFromSystem: bool
         :return: Dictionary of unbalanced loads.
         :rtype: dict(str,IscUnbalancedLoad)
@@ -7785,12 +7750,7 @@ class IscNetwork:
         Returns a dictionary of IscUnbalancedLine instances.
         Keys (sPyName) are the Python names and the associated values are IscUnbalancedLine instances.
 
-        :param bFetchFromSystem: Setting bFetchFromSystem to True forces Ipsa to rebuild
-            its internal component data maps.
-            Setting bFetchFromSystem to False will only rebuild the internal component data maps if
-            components have been added or deleted since the last Get… function call.
-            If the script creates new data components during its execution then the internal component data maps
-            will always be rebuilt and bFetchFromSystem can be True or False.
+        :param bFetchFromSystem: If set to True, IPSA rebuilds the data maps. If set to False, it only rebuilds if a new component has been built since last Get() function.
         :type bFetchFromSystem: bool
         :return: Dictionary of unbalanced lines.
         :rtype: dict(str,IscUnbalancedLine)
@@ -7802,12 +7762,7 @@ class IscNetwork:
         Returns a dictionary of IscUnbalancedTransformer instances.
         Keys (sPyName) are the Python names and the associated values are IscUnbalancedTransformer instances.
 
-        :param bFetchFromSystem: Setting bFetchFromSystem to True forces Ipsa to rebuild
-            its internal component data maps.
-            Setting bFetchFromSystem to False will only rebuild the internal component data maps if
-            components have been added or deleted since the last Get… function call.
-            If the script creates new data components during its execution then the internal component data maps
-            will always be rebuilt and bFetchFromSystem can be True or False.
+        :param bFetchFromSystem: If set to True, IPSA rebuilds the data maps. If set to False, it only rebuilds if a new component has been built since last Get() function.
         :type bFetchFromSystem: bool
         :return: Dictionary of unbalanced transformers.
         :rtype: dict(str,IscUnbalancedTransformer)
@@ -7819,12 +7774,7 @@ class IscNetwork:
         Returns a dictionary of IscVoltageRegulator instances.
         Keys (sPyName) are the Python names and the associated values are IscVoltageRegulator instances.
 
-        :param bFetchFromSystem: Setting bFetchFromSystem to True forces Ipsa to rebuild
-            its internal component data maps.
-            Setting bFetchFromSystem to False will only rebuild the internal component data maps if
-            components have been added or deleted since the last Get… function call.
-            If the script creates new data components during its execution then the internal component data maps
-            will always be rebuilt and bFetchFromSystem can be True or False.
+        :param bFetchFromSystem: If set to True, IPSA rebuilds the data maps. If set to False, it only rebuilds if a new component has been built since last Get() function.
         :type bFetchFromSystem: bool
         :return: Dictionary of voltage regulators.
         :rtype: dict(str,IscVoltageRegulator)
@@ -7836,12 +7786,7 @@ class IscNetwork:
         Returns a dictionary of IscAnnotation instances.
         Keys (sPyName) are the Python names and the associated values are IscAnnotation instances.
 
-        :param bFetchFromSystem: Setting bFetchFromSystem to True forces Ipsa to rebuild
-            its internal component data maps.
-            Setting bFetchFromSystem to False will only rebuild the internal component data maps if
-            components have been added or deleted since the last Get… function call.
-            If the script creates new data components during its execution then the internal component data maps
-            will always be rebuilt and bFetchFromSystem can be True or False.
+        :param bFetchFromSystem: If set to True, IPSA rebuilds the data maps. If set to False, it only rebuilds if a new component has been built since last Get() function.
         :type bFetchFromSystem: bool
         :return: Dictionary of annotations.
         :rtype: dict(str,IscAnnotation)
@@ -7884,12 +7829,7 @@ class IscNetwork:
         Returns a dictionary of all busbar UIDs in the network.
         The keys are the integer UIDs and the values are the IscBusbar instances.
 
-        :param bFetchFromSystem: Setting bFetchFromSystem to True forces Ipsa to rebuild
-            its internal component data maps.
-            Setting bFetchFromSystem to False will only rebuild the internal component data maps if
-            components have been added or deleted since the last Get… function call.
-            If the script creates new data components during its execution then the internal component data maps
-            will always be rebuilt and bFetchFromSystem can be True or False.
+        :param bFetchFromSystem: If set to True, IPSA rebuilds the data maps. If set to False, it only rebuilds if a new component has been built since last Get() function.
         :type bFetchFromSystem: bool
         :return: Dictionary of all busbar UIDs.
         :rtype: dict(int,IscBusbar)
@@ -7901,12 +7841,7 @@ class IscNetwork:
         Returns a dictionary of all protection device UIDs in the network.
         The keys are the integer UIDs and the values are the IscProtectionDevice instances.
 
-        :param bFetchFromSystem: Setting bFetchFromSystem to True forces Ipsa to rebuild
-            its internal component data maps.
-            Setting bFetchFromSystem to False will only rebuild the internal component data maps if
-            components have been added or deleted since the last Get… function call.
-            If the script creates new data components during its execution then the internal component data maps
-            will always be rebuilt and bFetchFromSystem can be True or False.
+        :param bFetchFromSystem: If set to True, IPSA rebuilds the data maps. If set to False, it only rebuilds if a new component has been built since last Get() function.
         :type bFetchFromSystem: bool
         :return: Dictionary of all protection devices UIDs.
         :rtype: dict(int,IscProtectionDevice)
@@ -8907,60 +8842,15 @@ class IscNetwork:
         """
         pass
 
-    @overload
     def GetBranchUIDs(self, bFetchFromSystem: bool):
         """
         Returns a dictionary of all branch UIDs in the network.
         The keys are the integer UIDs and the values are the IscBranch instances.
 
-        :param bFetchFromSystem: Setting bFetchFromSystem to True forces Ipsa to rebuild
-            its internal component data maps.
-            Setting bFetchFromSystem to False will only rebuild the internal component data maps if
-            components have been added or deleted since the last Get… function call.
-            If the script creates new data components during its execution then the internal component data maps
-            will always be rebuilt and bFetchFromSystem can be True or False.
+        :param bFetchFromSystem: If set to True, IPSA rebuilds the data maps. If set to False, it only rebuilds if a new component has been built since last Get() function.
         :type bFetchFromSystem: bool
         :return: Dictionary of all branches.
         :rtype: dict(int,IscBranch)
-        """
-        pass
-
-    @overload
-    def GetBranchUIDs(self, nFromID: int, nToID: int) -> List[int]:
-        """
-        Returns all branches connecting two busbars that are specified by their UIDs.
-
-        :param nFromID: The UID of the From busbar.
-        :type nFromID: int
-        :param nToID: The UID of the To busbar.
-        :type nToID: int
-        :return: List of branch UIDs.
-        :rtype: list(int)
-        """
-        pass
-
-    def GetBranchUIDs(self, nFromID: int, nToID: int) -> List[int]:
-        """
-        Returns a dictionary of all branch UIDs in the network if bFetchFromSystem is specified.
-        The keys are the integer UIDs and the values are the IscBranch instances.
-
-        Returns all branches connecting two busbars that are specified by their UIDs if nFromID and nToID are specified.
-
-        :param bFetchFromSystem: Setting bFetchFromSystem to True forces Ipsa to rebuild
-            its internal component data maps.
-            Setting bFetchFromSystem to False will only rebuild the internal component data maps if
-            components have been added or deleted since the last Get… function call.
-            If the script creates new data components during its execution then the internal component data maps
-            will always be rebuilt and bFetchFromSystem can be True or False.
-        :type bFetchFromSystem: bool
-        :param nFromID: The UID of the From busbar.
-        :type nFromID: int
-        :param nToID: The UID of the To busbar.
-        :type nToID: int
-        :return: Dictionary of all branches.
-        :rtype: dict(int,IscBranch)
-        :return: List of branch UIDs.
-        :rtype: list(int)
         """
         pass
 
@@ -8979,61 +8869,15 @@ class IscNetwork:
         """
         pass
 
-    @overload
     def GetTransformerUIDs(self, bFetchFromSystem: bool):
         """
         Returns a dictionary of all transformer UIDs in the network.
         The keys are the integer UIDs and the values are the IscTransformer instances.
 
-        :param bFetchFromSystem: Setting bFetchFromSystem to True forces Ipsa to rebuild
-            its internal component data maps.
-            Setting bFetchFromSystem to False will only rebuild the internal component data maps if
-            components have been added or deleted since the last Get… function call.
-            If the script creates new data components during its execution then the internal component data maps
-            will always be rebuilt and bFetchFromSystem can be True or False.
+        :param bFetchFromSystem: If set to True, IPSA rebuilds the data maps. If set to False, it only rebuilds if a new component has been built since last Get() function.
         :type bFetchFromSystem: bool
         :return: Dictionary of all transformer UIDs.
         :rtype: dict(int,IscTransformer)
-        """
-        pass
-
-    @overload
-    def GetTransformerUIDs(self, nFromID: int, nToID: int) -> List[int]:
-        """
-        Returns all transformers connecting two busbars that are specified by their UIDs.
-
-        :param nFromID: The UID of the From busbar.
-        :type nFromID: int
-        :param nToID: The UID of the To busbar.
-        :type nToID: int
-        :return: List of transformers UIDs.
-        :rtype: list(int)
-        """
-        pass
-
-    def GetTransformerUIDs(self, nFromID: int, nToID: int) -> List[int]:
-        """
-        Returns a dictionary of all transformer UIDs in the network if bFetchFromSystem is specified.
-        The keys are the integer UIDs and the values are the IscTransformer instances.
-
-        Returns all transformers connecting two busbars that are specified by their UIDs if nFromID and
-        nToID are specified.
-
-        :param bFetchFromSystem: Setting bFetchFromSystem to True forces Ipsa to rebuild
-            its internal component data maps.
-            Setting bFetchFromSystem to False will only rebuild the internal component data maps if
-            components have been added or deleted since the last Get… function call.
-            If the script creates new data components during its execution then the internal component data maps
-            will always be rebuilt and bFetchFromSystem can be True or False.
-        :type bFetchFromSystem: bool
-        :param nFromID: The UID of the From busbar.
-        :type nFromID: int
-        :param nToID: The UID of the To busbar.
-        :type nToID: int
-        :return: Dictionary of all transformer UIDs.
-        :rtype: dict(int,IscTransformer)
-        :return: List of transformers UIDs.
-        :rtype: list(int)
         """
         pass
 
@@ -9055,61 +8899,15 @@ class IscNetwork:
         """
         pass
 
-    @overload
     def Get3WTransformerUIDs(self, bFetchFromSystem: bool):
         """
         Returns a dictionary of all busbar UIDs in the network.
         The keys are the integer UIDs and the values are the IscBusbar instances.
 
-        :param bFetchFromSystem: Setting bFetchFromSystem to True forces Ipsa to rebuild
-            its internal component data maps.
-            Setting bFetchFromSystem to False will only rebuild the internal component data maps if
-            components have been added or deleted since the last Get… function call.
-            If the script creates new data components during its execution then the internal component data maps
-            will always be rebuilt and bFetchFromSystem can be True or False.
+        :param bFetchFromSystem: If set to True, IPSA rebuilds the data maps. If set to False, it only rebuilds if a new component has been built since last Get() function.
         :type bFetchFromSystem: bool
         :return: Dictionary of all 3WTransformers.
         :rtype: dict(int,Isc3WTransformer)
-        """
-        pass
-
-    @overload
-    def Get3WTransformerUIDs(self, nFromID: int, nToID: int) -> List[int]:
-        """
-        Returns all 3 winding transformers connecting two busbars that are specified by their UIDs.
-
-        :param nFromID: The UID of the From busbar.
-        :type nFromID: int
-        :param nToID: The UID of the To busbar.
-        :type nToID: int
-        :return: List of 3 winding transformers UIDs.
-        :rtype: list(int)
-        """
-        pass
-
-    def Get3WTransformerUIDs(self, nFromID: int, nToID: int) -> List[int]:
-        """
-        Returns a dictionary of all busbar UIDs in the network if bFetchFromSystem is specified.
-        The keys are the integer UIDs and the values are the IscBusbar instances.
-
-        Returns all 3 winding transformers connecting two busbars that are specified by their UIDs if nFromID and
-        nToID are specified.
-
-        :param bFetchFromSystem: Setting bFetchFromSystem to True forces Ipsa to rebuild
-            its internal component data maps.
-            Setting bFetchFromSystem to False will only rebuild the internal component data maps if
-            components have been added or deleted since the last Get… function call.
-            If the script creates new data components during its execution then the internal component data maps
-            will always be rebuilt and bFetchFromSystem can be True or False.
-        :type bFetchFromSystem: bool
-        :param nFromID: The UID of the From busbar.
-        :type nFromID: int
-        :param nToID: The UID of the To busbar.
-        :type nToID: int
-        :return: Dictionary of all 3WTransformers.
-        :rtype: dict(int,Isc3WTransformer)
-        :return: List of 3 winding transformers UIDs.
-        :rtype: list(int)
         """
         pass
 
@@ -11140,7 +10938,7 @@ class IscNetwork:
         """
         pass
 
-    def DoLoadFlow(self, bNoEngineLoad: bool, bDontUpdateData: bool) -> bool:
+    def DoLoadFlow(self, bNoEngineLoad: bool, bDontUpdateData: bool, bUseDC: bool = False) -> bool:
         """
         Performs a load flow calculation.
 
@@ -11148,6 +10946,8 @@ class IscNetwork:
         :type bNoEngineLoad: bool
         :param bDontUpdateData: If False (default), allows the load flow results being written back to the network model data (e.g. Busbar voltages and angles). If True, skips this stage, so the network model remains the same as it was loaded. **Note that calling the function with no arguments is allowed and works as if it has been called with bNoEngineLoad and bDontUpdateData set to False.**
         :type bDontUpdateData: bool
+        :param bUseDC: Tells the user that they can run a DC load flow instead of a normal load flow. If True, the program will run a DC load flow instead of an AC load flow. Default value of bUseDC is False.
+        :type bUseDC: bool
         :return: True if the load flow converges, False on a non-convergence.
         :rtype: bool
         """
@@ -11438,6 +11238,39 @@ class IscNetwork:
         """
         pass
 
+    def RunArcFlashForBusbar(self, nBusbarUID: int, dBusFaultCurrentkA: float, dOperatingTimeSec: float) -> bool:
+        """
+        Performs an ArcFlash calculation for a single busbar using the fault current in kA and the operating time.
+        The default reduction for comparison is 15% less for the current and 2.5x the arc duration given.
+
+        :param nBusbarUID: The UID of the selected busbar.
+        :type nBusbarUID: int
+        :param dBusFaultCurrentkA: The fault current in kA.
+        :type dBusFaultCurrentkA: float
+        :param dOperatingTimeSec: The operating time in seconds.
+        :type dOperatingTimeSec: float
+        :return: Returns True if it is successful.
+        :rtype: bool
+        """
+        pass
+
+    def RunTotalArcFlash(self, bRunIPSAFaultLevel: bool, dOperatingTimeSec: float, dReducedOperatingTimeSec: float) -> List[Dict[int,bool]]:
+        """
+        Runs a thorough arc flash calculation for the whole network.
+        **Note that here either the analysis class default for the fault current calculation is used or IPSA can run a fault level to calculate the fault current at each busbar.**
+        Returns a list of pairs that map the UID to a boolean of whether the code ran correctly or not.
+
+        :param bRunIPSAFaultLevel: Variable denoting whether it runs the IPSA fault lever before the arc flash.
+        :type bRunIPSAFaultLevel: bool
+        :param dOperatingTimeSec: The operating time in seconds.
+        :type dOperatingTimeSec: float
+        :param dReducedOperatingTimeSec: The reduced operating time in seconds.
+        :type dReducedOperatingTimeSec: float
+        :return: A a list of pairs that map the UID to a boolean of whether the code ran correctly or not.
+        :rtype: list(dict(int,bool))
+        """
+        pass
+
     def GetAnalysisFL(self):
         """
         Returns an IscAnlaysisFL object which can be used to get and set the fault level analysis parameters.
@@ -11492,6 +11325,30 @@ class IscNetwork:
         """
         pass
 
+    def DoStorageFlip(self, lGeneratorsUID: List[int]) -> bool:
+        """
+        Flips the storage of all defined Energy Storage units in the given list of UIDs.
+
+        :param lGeneratorsUID: The given list of generators UIDs.
+        :type lGeneratorsUID: list(int)
+        :return: True if successful.
+        :rtype: bool
+        """
+        pass
+
+    def DoGlobalStorageFlip(self, bFlipsImports: bool, bFlipExports: bool) -> bool:
+        """
+        Flips all the storage units defined in the network depending on whether you want to flip imports to exports or vice versa.
+
+        :param bFlipsImports: Variable denoting whether you want to flip imports to exports.
+        :type bFlipsImports: bool
+        :param bFlipExports: Variable denoting whether you want to flip exports to imports.
+        :type bFlipExports: bool
+        :return: True if successful.
+        :rtype: bool
+        """
+        pass
+
     def RunContingency(self, nUID: int, bUseProfiles: bool) -> None:
         """
         Performs the contingency study identified by the integer UID.
@@ -11510,6 +11367,7 @@ class IscNetwork:
         """
         Creates a new contingency study and returns the UID of the study created.
         The depth of the study is configured as follows:
+
             - 1 = N - 1
             - 2 = N - 2
             - 3 = N - 3
@@ -11521,6 +11379,23 @@ class IscNetwork:
         If True then the nearest circuit breakers are switched out allowing multiple components to be switched
         for each study.
         :type bExtendToBreakers: bool
+        """
+        pass
+
+    def CreateSpecificContingency(self, nDepth: int, bExtendToBreakers: bool, lBusbarsRequired) -> int:
+        """
+        Will design and create a specific contingency of given depth with only the busbars defined by the given list.
+
+        :param nDepth: The depth of the study.
+        :type nDepth: int
+        :param bExtendToBreakers: If False then individual branches and transfers are switched out during the study.
+        If True then the nearest circuit breakers are switched out allowing multiple components to be switched
+        for each study.
+        :type bExtendToBreakers: bool
+        :param lBusbarsRequired: The specified list of busbars.
+        :type lBusbarsRequired: list(IscBusbar)
+        :return: The UID of the contingency.
+        :rtype: int
         """
         pass
 
@@ -11804,6 +11679,28 @@ class IscNetwork:
         """
         pass
 
+    def GetArcFlashCSV(self, nBusbarUID: int, bUseLegacyStandard: bool) -> str:
+        """
+        Creates a CSV result for a given busbar arcflash calculation and uses the 2018 standard if bUseLegacyStandard is set to False.
+
+        :param nBusbarUID: The busbar UID.
+        :type nBusbarUID: int
+        :param bUseLegacyStandard: Variable denoting whether the legacy standard used.
+        :type bUseLegacyStandard: bool
+        :return: The CSV result for a given busbar arcflash calculation.
+        :rtype: str
+        """
+        pass
+
+    def GetTotalArcFlashCSV(self) -> str:
+        """
+        Returns total CSV formatted function for ArcFlash results from all busbars.
+
+        :return: The total CSV formatted function for ArcFlash results from all busbars.
+        :rtype: str
+        """
+        pass
+
     def GetArcFlashReportText(self, nUID: int) -> str:
         """
         Returns a string containing the arc flash result for the busbar identified by the UID.
@@ -11812,6 +11709,52 @@ class IscNetwork:
         :type nUID: int
         :return: The average service unavailability index (ASUI) for the full network.
         :rtype: str
+        """
+        pass
+
+    def SetBusbarOverloadLimits(self, dBusVoltHighPU: float, dBusVoltlowPU: float) -> None:
+        """
+        Sets the network global high and low limits for busbar overloads.
+
+        :param dBusVoltHighPU: The high limit for busbar overloads per unit.
+        :type dBusVoltHighPU: float
+        :param dBusVoltlowPU: The low limit for busbar overloads per unit.
+        :type dBusVoltlowPU: float
+        """
+        pass
+
+    def SetBranchOverloadLimits(self, dBranchRatingHighPC: float, dBranchRatingLowPC: float, nRatingIndex: int) -> None:
+        """
+        Sets the network global percentage ratings for branches with a given rating index that is lifted from IscBranch (i.e., Standard, Summer, Winter, Short).
+
+        :param dBranchRatingHighPC: The high network global percentage rating limit.
+        :type dBranchRatingHighPC: float
+        :param dBranchRatingLowPC: The low network global percentage rating limit.
+        :type dBranchRatingLowPC: float
+        :param nRatingIndex: The given rating index.
+        :type nRatingIndex: int
+        """
+        pass
+
+    def GetAnalysisAF(self):
+        """
+        Returns an IscAnalysisAF object which can be used to get and set the AirFlash analysis parameters.
+
+        :return: IscAnlaysisAF object.
+        :rtype: IscAnlaysisAF
+        """
+        pass
+
+    def DoFlatStart(self, bSetBuses: bool, bSetTransformerTaps: bool, bSetIMSlips: bool) -> None:
+        """
+        Runs a flatstart preparation for load flow depending on whether the user wants to flat start the busbar voltages, transformer tap positions, induction machine rotor slips or a combination of all 3.
+
+        :param bSetBuses: Enabling flat start for the busbar voltages.
+        :type bSetBuses: bool
+        :param bSetTransformerTaps: Enabling flat start for the transformer tap positions.
+        :type bSetTransformerTaps: bool
+        :param bSetIMSlips: Enabling flat start for the induction machine rotor slips.
+        :type bSetIMSlips: bool
         """
         pass
 
@@ -12002,12 +11945,12 @@ class IscPlugin:
         """
         pass
 
-    def SetIntParameter(self, nFieldIndex: int, nValue: int) -> bool:
+    def SetIntParameter(self, nPluginIndex: int, nValue: int) -> bool:
         """
-        Sets the parameter for the field from an integer value. The parameters are specific for the plugin object.
+        Sets the index of the specific plugin parameter for the field from an integer value. The parameters are specific for the plugin object.
 
-        :param nFieldIndex: The field index.
-        :type nFieldIndex: int
+        :param nPluginIndex: The index to the specific plugin parameter.
+        :type nPluginIndex: int
         :param nValue: The given integer value.
         :type nValue: int
         :return: True if successful.
@@ -12015,12 +11958,12 @@ class IscPlugin:
         """
         pass
 
-    def SetDoubleParameter(self, nFieldIndex: int, dValue: float) -> bool:
+    def SetDoubleParameter(self, nPluginIndex: int, dValue: float) -> bool:
         """
-        Sets the parameter for the field from a double value. The parameters are specific for the plugin object.
+        Sets the index of the specific plugin parameter for the field from a double value. The parameters are specific for the plugin object.
 
-        :param nFieldIndex: The field index.
-        :type nFieldIndex: int
+        :param nPluginIndex: The index to the specific plugin parameter.
+        :type nPluginIndex: int
         :param dValue: The given double value.
         :type dValue: float
         :return: True if successful.
@@ -12028,12 +11971,12 @@ class IscPlugin:
         """
         pass
 
-    def SetBoolParameter(self, nFieldIndex: int, strValue: int) -> bool:
+    def SetBoolParameter(self, nPluginIndex: int, strValue: int) -> bool:
         """
-        Sets the parameter for the field from a boolean value. The parameters are specific for the plugin object.
+        Sets the index of the specific plugin parameter for the field from a boolean value. The parameters are specific for the plugin object.
 
-        :param nFieldIndex: The field index.
-        :type nFieldIndex: int
+        :param nPluginIndex: The index to the specific plugin parameter.
+        :type nPluginIndex: int
         :param strValue: The given string value.
         :type strValue: str
         :return: True if successful.
@@ -12041,34 +11984,34 @@ class IscPlugin:
         """
         pass
 
-    def GetIntParameter(self, nFieldIndex: int) -> int:
+    def GetIntParameter(self, nPluginIndex: int) -> int:
         """
-        Returns an integer parameter for the enumerated field. The parameters are specific for the plugin object.
+        Returns an integer parameter for the enumerated field defined by the specific plugin parameter. The parameters are specific for the plugin object.
 
-        :param nFieldIndex: The field index.
-        :type nFieldIndex: int
+        :param nPluginIndex: The index to the specific plugin parameter.
+        :type nPluginIndex: int
         :return: The integer value.
         :rtype: int
         """
         pass
 
-    def GetDoubleParameter(self, nFieldIndex: int) -> float:
+    def GetDoubleParameter(self, nPluginIndex: int) -> float:
         """
-        Returns a double parameter for the enumerated field. The parameters are specific for the plugin object.
+        Returns a double parameter for the enumerated field defined by the specific plugin parameter. The parameters are specific for the plugin object.
 
-        :param nFieldIndex: The field index.
-        :type nFieldIndex: int
+        :param nPluginIndex: The index to the specific plugin parameter.
+        :type nPluginIndex: int
         :return: The double value.
         :rtype: float
         """
         pass
 
-    def GetBoolParameter(self, nFieldIndex: int) -> bool:
+    def GetBoolParameter(self, nPluginIndex: int) -> bool:
         """
-        Returns a boolean parameter for the enumerated field. The parameters are specific for the plugin object.
+        Returns a boolean parameter for the enumerated field defined by the specific plugin parameter. The parameters are specific for the plugin object.
 
-        :param nFieldIndex: The field index.
-        :type nFieldIndex: int
+        :param nPluginIndex: The index to the specific plugin parameter.
+        :type nPluginIndex: int
         :return: The string value.
         :rtype: bool
         """
@@ -12220,7 +12163,7 @@ class IscProtectionDevice:
 
 class IscStaticVC:
     """
-    Provides access to an Ipsa Static VAR Compensator (SVC).
+    Provides access to an IPSA Static VAR Compensator (SVC).
     """
     def SetName(self, strName: str) -> bool:
         """

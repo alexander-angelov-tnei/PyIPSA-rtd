@@ -164,6 +164,33 @@ Field Values
    * - Float
      - VoltageFactorPg
      - The voltage factor (P_g) of the machine, only for use in IEC60909 fault calculations.
+   * - Integer
+     - GenTechnology
+     - The specific type of generator that can be categorized:
+
+        - 0 = Synchronous machine (default)
+        - 1 = Energy storage
+        - 2 = Solar
+        - 3 = Wind
+        - 4 = Hydroelectric
+        - 5 = Nuclear
+        - 6 = Gas
+        - 7 = Coal
+        - 8 = Diesel
+        - 9 = Geothermal
+        - 10 = Tidal
+        - 11 = Future generation (TBC)
+   * - Integer
+     - GenStage
+     - The stage at which the generation production/planning is situated:
+
+        - 0 = Proposed
+        - 1 = Accepted
+        - 2 = Completed
+        - 3 = Energized (default, in service)
+   * - Float
+     - StorageIERatio
+     - For energy storage components, this is the ratio between where a storage unit behaves as an import or an export. If the storage is flipped from export to import, the real power is multiplied by this ratio. Default is 1.
 
 IscSynMachine Class
 --------------------

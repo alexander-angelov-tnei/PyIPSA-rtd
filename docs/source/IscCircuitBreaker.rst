@@ -14,6 +14,9 @@ Field Values
    * - Type
      - Field Name
      - Description
+   * - Integer
+     - FromUID
+     - Gets the unique ID for busbar.
    * - String
      - BusName
      - Gets the busbar name nearest to the circuit breaker.
