@@ -16,7 +16,7 @@ version = 'v2.10.0'
 html_css_files = ['css/custom.css']
 # -- General configuration
 
-master_doc = 'source/index'
+master_doc = 'index'
 
 extensions = [
     'sphinx.ext.duration',
