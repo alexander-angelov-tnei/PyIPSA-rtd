@@ -16,6 +16,8 @@ version = 'v2.10.0'
 html_css_files = ['css/custom.css']
 # -- General configuration
 
+master_doc = 'index'
+
 extensions = [
     'sphinx.ext.duration',
     'sphinx.ext.doctest',
@@ -37,8 +39,6 @@ intersphinx_disabled_domains = ['std']
 templates_path = ['_templates']
 
 source_suffix = '.rst'
-
-master_doc = 'index'
 
 # -- Options for HTML output
 html_theme = 'sphinx_rtd_theme'
