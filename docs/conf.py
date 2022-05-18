@@ -6,7 +6,7 @@ sys.path.insert(0, os.path.abspath('../'))
 
 # -- Project information
 
-project = 'PyIPSA-rtd'
+project = 'PyIPSA'
 copyright = 'IPSA'
 author = 'IPSA'
 
